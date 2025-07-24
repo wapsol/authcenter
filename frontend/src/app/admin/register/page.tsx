@@ -127,8 +127,8 @@ export default function RegisterAppPage() {
     return (
       <div className="min-h-screen bg-slate-900 text-slate-100">
         <Navbar />
-        <div className="container mx-auto px-4 py-8">
-          <div className="mb-8">
+        <div className="container mx-auto px-4 py-4 max-w-7xl">
+          <div className="mb-6">
             <button
               onClick={resetForm}
               className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 mb-4"
@@ -158,105 +158,131 @@ export default function RegisterAppPage() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Application Name *
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="e.g., magnetiq"
-                />
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column - Basic Information */}
+            <div className="space-y-6">
+              <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
+                <h3 className="text-lg font-semibold text-slate-100 mb-4 flex items-center">
+                  <FileText className="h-5 w-5 text-blue-400 mr-2" />
+                  Basic Information
+                </h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Application Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="e.g., magnetiq"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Display Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.display_name}
+                      onChange={(e) => handleInputChange('display_name', e.target.value)}
+                      className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="e.g., Magnetiq CMS"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Description
+                    </label>
+                    <textarea
+                      value={formData.description}
+                      onChange={(e) => handleInputChange('description', e.target.value)}
+                      rows={3}
+                      className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Brief description of the application"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      Logo URL
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.logo_url}
+                      onChange={(e) => handleInputChange('logo_url', e.target.value)}
+                      className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="/logos/app-logo.svg"
+                    />
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Display Name *
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.display_name}
-                  onChange={(e) => handleInputChange('display_name', e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="e.g., Magnetiq CMS"
-                />
+            {/* Right Column - Technical Configuration */}
+            <div className="space-y-6">
+              <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
+                <h3 className="text-lg font-semibold text-slate-100 mb-4 flex items-center">
+                  <Server className="h-5 w-5 text-green-400 mr-2" />
+                  Technical Configuration
+                </h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      API Endpoints (JSON)
+                    </label>
+                    <textarea
+                      value={formData.api_endpoints}
+                      onChange={(e) => handleInputChange('api_endpoints', e.target.value)}
+                      rows={6}
+                      className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+                      placeholder='{"webhook": "https://example.com/webhook", "health": "https://example.com/health"}'
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">
+                      PCARP Manifest Data (JSON)
+                    </label>
+                    <textarea
+                      value={formData.manifest_data}
+                      onChange={(e) => handleInputChange('manifest_data', e.target.value)}
+                      rows={10}
+                      className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+                      placeholder='{"pcarp_version": "1.0", "app": {...}, "authentication": {...}}'
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">
-                Description
-              </label>
-              <textarea
-                value={formData.description}
-                onChange={(e) => handleInputChange('description', e.target.value)}
-                rows={3}
-                className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Brief description of the application"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">
-                Logo URL
-              </label>
-              <input
-                type="text"
-                value={formData.logo_url}
-                onChange={(e) => handleInputChange('logo_url', e.target.value)}
-                className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="/logos/app-logo.svg"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">
-                API Endpoints (JSON)
-              </label>
-              <textarea
-                value={formData.api_endpoints}
-                onChange={(e) => handleInputChange('api_endpoints', e.target.value)}
-                rows={4}
-                className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
-                placeholder='{"webhook": "https://example.com/webhook", "health": "https://example.com/health"}'
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">
-                PCARP Manifest Data (JSON)
-              </label>
-              <textarea
-                value={formData.manifest_data}
-                onChange={(e) => handleInputChange('manifest_data', e.target.value)}
-                rows={8}
-                className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
-                placeholder='{"pcarp_version": "1.0", "app": {...}, "authentication": {...}}'
-              />
-            </div>
-
-            <div className="flex items-center justify-between pt-6 border-t border-slate-700">
-              <button
-                type="button"
-                onClick={resetForm}
-                className="px-4 py-2 text-slate-400 hover:text-slate-300 transition-colors"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="flex items-center space-x-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white rounded-md transition-colors"
-              >
-                <Save className="h-4 w-4" />
-                <span>{isSubmitting ? 'Saving...' : (editingApp ? 'Update Application' : 'Register Application')}</span>
-              </button>
+            {/* Action Buttons - Full Width */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center justify-between pt-6 border-t border-slate-700">
+                <button
+                  type="button"
+                  onClick={resetForm}
+                  className="px-6 py-2 text-slate-400 hover:text-slate-300 transition-colors flex items-center space-x-2"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  <span>Cancel</span>
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="flex items-center space-x-2 px-8 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-600 text-white rounded-md transition-colors text-lg"
+                >
+                  <Save className="h-5 w-5" />
+                  <span>{isSubmitting ? 'Saving...' : (editingApp ? 'Update Application' : 'Register Application')}</span>
+                </button>
+              </div>
             </div>
           </form>
         </div>
@@ -267,8 +293,8 @@ export default function RegisterAppPage() {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8">
+      <div className="container mx-auto px-4 py-4 max-w-7xl">
+        <div className="mb-6">
           <div className="flex items-center space-x-3 mb-4">
             <FileText className="h-8 w-8 text-blue-400" />
             <h1 className="text-3xl font-bold text-slate-100">Application Management</h1>
