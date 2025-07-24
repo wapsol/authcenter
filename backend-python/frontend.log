@@ -1,0 +1,111 @@
+
+> authcenter@1.0.0 dev
+> concurrently "npm run backend:dev" "npm run frontend:dev"
+
+[0] 
+[0] > authcenter@1.0.0 backend:dev
+[0] > cd backend && npm run dev
+[0] 
+[1] 
+[1] > authcenter@1.0.0 frontend:dev
+[1] > cd frontend && npm run dev
+[1] 
+[1] 
+[1] > frontend@0.1.0 dev
+[1] > next dev
+[1] 
+[0] 
+[0] > @authcenter/backend@1.0.0 dev
+[0] > nodemon src/index.ts
+[0] 
+[0] [33m[nodemon] 3.1.10[39m
+[0] [33m[nodemon] to restart at any time, enter `rs`[39m
+[0] [33m[nodemon] watching path(s): *.*[39m
+[0] [33m[nodemon] watching extensions: ts,json[39m
+[0] [32m[nodemon] starting `ts-node src/index.ts`[39m
+[1]  ⚠ Warning: Found multiple lockfiles. Selecting /Users/ashant/package-lock.json.
+[1]    Consider removing the lockfiles at:
+[1]    * /Users/ashant/authcenter/package-lock.json
+[1] 
+[1]    ▲ Next.js 15.4.2
+[1]    - Local:        http://localhost:3000
+[1]    - Network:      http://192.168.243.181:3000
+[1] 
+[1]  ✓ Starting...
+[1]  ⚠ Attempted to load @next/swc-darwin-arm64, but an error occurred: dlopen(/Users/ashant/authcenter/node_modules/@next/swc-darwin-arm64/next-swc.darwin-arm64.node, 0x0001): tried: '/Users/ashant/authcenter/node_modules/@next/swc-darwin-arm64/next-swc.darwin-arm64.node' (segment '__TEXT' load command content extends beyond end of file), '/System/Volumes/Preboot/Cryptexes/OS/Users/ashant/authcenter/node_modules/@next/swc-darwin-arm64/next-swc.darwin-arm64.node' (no such file), '/Users/ashant/authcenter/node_modules/@next/swc-darwin-arm64/next-swc.darwin-arm64.node' (segment '__TEXT' load command content extends beyond end of file)
+[1]  ✓ Ready in 1263ms
+[0] [32minfo[39m: Connected to SQLite database {"timestamp":"2025-07-22T09:03:50.114Z"}
+[0] [32minfo[39m: Admin user seeded with default password {"timestamp":"2025-07-22T09:03:50.179Z"}
+[0] [32minfo[39m: Internal apps seeded successfully {"timestamp":"2025-07-22T09:03:50.180Z"}
+[0] [32minfo[39m: Database tables created successfully {"timestamp":"2025-07-22T09:03:50.180Z"}
+[0] [32minfo[39m: Using in-memory cache (Redis disabled for demo) {"timestamp":"2025-07-22T09:03:50.180Z"}
+[0] [32minfo[39m: Authentication Hub Backend running on port 3001 {"timestamp":"2025-07-22T09:03:50.181Z"}
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:03:53 +0000] "GET /health HTTP/1.1" 200 54 "-" "curl/8.7.1" {"timestamp":"2025-07-22T09:03:53.933Z"}
+[1]  ○ Compiling / ...
+[1]  ✓ Compiled / in 2.6s (825 modules)
+[1]  GET / 200 in 2758ms
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:04:04 +0000] "GET /api/providers/ HTTP/1.1" 200 352 "-" "curl/8.7.1" {"timestamp":"2025-07-22T09:04:04.408Z"}
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:04:08 +0000] "GET /api/mapping/internal-apps HTTP/1.1" 200 6555 "-" "curl/8.7.1" {"timestamp":"2025-07-22T09:04:08.015Z"}
+[1]  GET / 200 in 46ms
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:04:12 +0000] "GET /api/admin/logs HTTP/1.1" 200 11 "-" "curl/8.7.1" {"timestamp":"2025-07-22T09:04:12.417Z"}
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:04:12 +0000] "GET /api/providers/ HTTP/1.1" 200 352 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T09:04:12.568Z"}
+[1]  ✓ Compiled /favicon.ico in 128ms (506 modules)
+[1]  GET /favicon.ico 200 in 185ms
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:04:16 +0000] "GET /api/admin/stats HTTP/1.1" 404 154 "-" "curl/8.7.1" {"timestamp":"2025-07-22T09:04:16.619Z"}
+[1]  GET / 200 in 148ms
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:18:01 +0000] "GET /api/providers/ HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T09:18:01.401Z"}
+[1]  GET / 200 in 44ms
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:18:07 +0000] "GET /api/providers/ HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T09:18:07.242Z"}
+[1]  ✓ Compiled /admin/register in 315ms (822 modules)
+[1]  ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[1]  GET / 200 in 11ms
+[1]  GET /admin/register 200 in 455ms
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:18:08 +0000] "GET /api/admin/apps HTTP/1.1" 200 6555 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T09:18:08.796Z"}
+[1]  ✓ Compiled /admin/logs in 129ms (821 modules)
+[1]  GET /admin/logs 200 in 228ms
+[1]  ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:18:10 +0000] "GET /api/admin/logs?limit=50 HTTP/1.1" 200 11 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T09:18:10.414Z"}
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:18:10 +0000] "GET /api/admin/logs/stats HTTP/1.1" 200 99 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T09:18:10.415Z"}
+[1]  GET /admin/register 200 in 58ms
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:18:11 +0000] "GET /api/admin/apps HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T09:18:11.753Z"}
+[1]  ✓ Compiled in 299ms (829 modules)
+[1]  GET /admin/register 200 in 62ms
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:27:44 +0000] "GET /api/admin/apps HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T09:27:44.630Z"}
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:27:57 +0000] "GET /api/admin/apps HTTP/1.1" 200 6555 "-" "curl/8.7.1" {"timestamp":"2025-07-22T09:27:57.113Z"}
+[0] [32minfo[39m: ::1 - - [22/Jul/2025:09:28:18 +0000] "GET /api/admin/apps HTTP/1.1" 200 6555 "-" "curl/8.7.1" {"timestamp":"2025-07-22T09:28:18.337Z"}
+[0] [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[1]  GET /admin/register 200 in 99ms
+[1]  GET /admin/register 200 in 39ms
+[1]  GET /admin/register 200 in 42ms
+[1]  ✓ Compiled /favicon.ico in 100ms (516 modules)
+[1]  GET /favicon.ico 200 in 163ms
+[1]  GET /admin/register 200 in 150ms
+[1]  GET /admin/register 200 in 26ms
+[1]  GET / 200 in 74ms
+[1]  GET / 200 in 51ms
+[1]  GET / 200 in 54ms
+[1]  GET / 200 in 52ms
+[1]  GET / 200 in 39ms
+[1]  GET /admin/register 200 in 58ms
+[1]  GET /admin/register 200 in 58ms
+[1]  ✓ Compiled /admin/logs in 156ms (507 modules)
+[1]  GET /admin/logs 200 in 351ms
+[1]  GET /admin/register 200 in 66ms
+[1]  GET / 200 in 59ms
+[1]  GET / 200 in 34ms
+[1]  GET / 200 in 46ms
+[1]  GET /admin/register 200 in 63ms
+[1]  GET / 200 in 49ms
+[1]  ✓ Compiled /favicon.ico in 102ms (516 modules)
+[1]  GET /favicon.ico 200 in 170ms
+[1]  GET /admin/register 200 in 185ms
+[1]  GET /admin/register 200 in 58ms
+[1]  ✓ Compiled /admin/logs in 154ms (507 modules)
+[1]  GET /admin/logs 200 in 332ms
+[1]  GET /admin/logs 200 in 58ms
+[1]  ✓ Compiled /favicon.ico in 85ms (524 modules)
+[1]  GET /favicon.ico 200 in 144ms
+[1]  GET /admin/logs 200 in 164ms
+[1]  GET /favicon.ico 200 in 5ms
+[1] [?25h
+[1] npm run frontend:dev exited with code 0

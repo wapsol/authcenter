@@ -1,0 +1,21 @@
+
+> @authcenter/backend@1.0.0 dev
+> nodemon src/index.ts
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: ts,json[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32minfo[39m: Connected to SQLite database {"timestamp":"2025-07-22T08:28:55.435Z"}
+[32minfo[39m: Admin user seeded with default password {"timestamp":"2025-07-22T08:28:55.500Z"}
+[32minfo[39m: Internal apps seeded successfully {"timestamp":"2025-07-22T08:28:55.500Z"}
+[32minfo[39m: Database tables created successfully {"timestamp":"2025-07-22T08:28:55.500Z"}
+[32minfo[39m: Using in-memory cache (Redis disabled for demo) {"timestamp":"2025-07-22T08:28:55.500Z"}
+[32minfo[39m: Authentication Hub Backend running on port 3001 {"timestamp":"2025-07-22T08:28:55.501Z"}
+[32minfo[39m: ::1 - - [22/Jul/2025:08:28:58 +0000] "GET /health HTTP/1.1" 200 54 "-" "curl/8.7.1" {"timestamp":"2025-07-22T08:28:58.570Z"}
+[32minfo[39m: ::1 - - [22/Jul/2025:08:29:01 +0000] "GET /api/providers HTTP/1.1" 200 352 "-" "curl/8.7.1" {"timestamp":"2025-07-22T08:29:01.536Z"}
+[32minfo[39m: ::1 - - [22/Jul/2025:08:31:14 +0000] "GET /api/providers HTTP/1.1" 200 352 "http://localhost:3003/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T08:31:14.168Z"}
+[32minfo[39m: ::1 - - [22/Jul/2025:08:34:56 +0000] "GET /api/mapping/internal-apps HTTP/1.1" 200 1880 "http://localhost:3003/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T08:34:56.900Z"}
+[32minfo[39m: ::1 - - [22/Jul/2025:08:34:56 +0000] "GET /api/mapping/internal-apps HTTP/1.1" 200 1880 "http://localhost:3003/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" {"timestamp":"2025-07-22T08:34:56.903Z"}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m

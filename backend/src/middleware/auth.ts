@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
+import jwt, { SignOptions } from 'jsonwebtoken';
 import { createError } from './errorHandler';
 import { logger } from '../utils/logger';
 
@@ -19,7 +19,8 @@ export function authenticateToken(req: AuthRequest, res: Response, next: NextFun
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as any;
+    const jwtSecret = process.env.JWT_SECRET || 'fallback-secret-key';
+    const decoded = jwt.verify(token, jwtSecret) as any;
     req.user = {
       id: decoded.userId,
       email: decoded.email
@@ -32,9 +33,12 @@ export function authenticateToken(req: AuthRequest, res: Response, next: NextFun
 }
 
 export function generateToken(userId: number, email: string): string {
+  const jwtSecret = process.env.JWT_SECRET || 'fallback-secret-key';
+  const expiresIn = process.env.JWT_EXPIRES_IN || '24h';
+  
   return jwt.sign(
     { userId, email },
-    process.env.JWT_SECRET!,
-    { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
+    jwtSecret,
+    { expiresIn } as SignOptions
   );
 }

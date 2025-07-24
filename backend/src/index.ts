@@ -11,6 +11,8 @@ import authRoutes from './routes/auth';
 import providerRoutes from './routes/provider';
 import connectionRoutes from './routes/connection';
 import apiRoutes from './routes/api';
+import adminRoutes from './routes/admin';
+import mappingRoutes from './routes/mapping';
 
 dotenv.config();
 
@@ -30,6 +32,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/providers', providerRoutes);
 app.use('/api/connections', connectionRoutes);
 app.use('/api/v1', apiRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/mapping', mappingRoutes);
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

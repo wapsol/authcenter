@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  /* Voltaic Systems inspired color scheme - dark tech theme */
+  --background: #0f0f23; /* Deep space blue */
+  --foreground: #e2e8f0; /* Light slate */
+  
+  /* Primary brand colors - electric blue theme */
+  --primary: #3b82f6; /* blue-500 */
+  --primary-dark: #1e40af; /* blue-700 */
+  --primary-light: #93c5fd; /* blue-300 */
+  
+  /* Accent colors - electric/energy theme */
+  --accent: #06b6d4; /* cyan-500 */
+  --accent-dark: #0891b2; /* cyan-600 */
+  --accent-light: #67e8f9; /* cyan-300 */
+  
+  /* Surface colors */
+  --surface: #1e293b; /* slate-800 */
+  --surface-light: #334155; /* slate-700 */
+  --surface-lighter: #475569; /* slate-600 */
+  
+  /* Success/active state */
+  --success: #22c55e; /* green-500 */
+  
+  /* Warning/pending state */
+  --warning: #f59e0b; /* amber-500 */
+  
+  /* Error/danger state */
+  --danger: #ef4444; /* red-500 */
+  
+  /* Muted colors */
+  --muted: #64748b; /* slate-500 */
+  --muted-light: #94a3b8; /* slate-400 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-muted: var(--muted);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f8fafc; /* slate-50 */
+    --foreground: #0f172a; /* slate-900 */
+    --surface: #ffffff;
+    --surface-light: #f1f5f9; /* slate-100 */
+    --surface-lighter: #e2e8f0; /* slate-200 */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Custom component styles for electric/tech theme */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.glass-effect {
+  backdrop-filter: blur(16px);
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.electric-glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+  }
+}

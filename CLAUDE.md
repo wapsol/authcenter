@@ -1,0 +1,1 @@
+- Always test the URLs, frontend and backend after coding and before concluding the task!
